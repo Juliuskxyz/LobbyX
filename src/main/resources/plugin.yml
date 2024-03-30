@@ -11,3 +11,7 @@ commands:
     description: Enables/Disables Building in the Lobby
     usage: /<command>
     permission: lobby.build
+  fly:
+    description: Enables/Disables Flying in the Lobby
+    usage: /<command>
+    permission: lobby.fly

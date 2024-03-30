@@ -1,6 +1,7 @@
 package de.julius.lobby;
 
 import de.julius.lobby.commands.buildCommand;
+import de.julius.lobby.commands.flyCommand;
 import de.julius.lobby.listeners.*;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -30,6 +31,7 @@ public final class Lobby extends JavaPlugin {
 
         //register Commands
         this.getCommand("build").setExecutor(new buildCommand(this));
+        this.getCommand("fly").setExecutor(new flyCommand(this));
     }
 
     @Override
