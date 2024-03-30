@@ -32,7 +32,7 @@ public class buildCommand implements CommandExecutor {
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', buildOnMessage));
                         player.setGameMode(GameMode.CREATIVE);
                         player.getInventory().clear();
-                        } else {
+                    } else {
                         Lobby.builders.remove(player);
                         String buildOffMessage = this.plugin.getConfig().getString("build-off");
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', buildOffMessage));

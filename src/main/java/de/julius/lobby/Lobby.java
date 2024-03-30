@@ -1,11 +1,13 @@
 package de.julius.lobby;
 
 import de.julius.lobby.commands.buildCommand;
+import de.julius.lobby.commands.flyCommand;
 import de.julius.lobby.listeners.*;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -34,17 +36,13 @@ public final class Lobby extends JavaPlugin {
 
         //register Commands
         this.getCommand("build").setExecutor(new buildCommand(this));
-
-        // Register messaging channels
-        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-
+        this.getCommand("fly").setExecutor(new flyCommand(this));
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
     }
-
     public static void teleportPlayerToServer(final Player player, final String server, Plugin plugin){
         final String message = plugin.getConfig().getString("server-teleport-message");
         if (message != null) {
@@ -63,5 +61,4 @@ public final class Lobby extends JavaPlugin {
             e.printStackTrace();
         }
     }
-
 }
