@@ -1,4 +1,4 @@
-package de.julius.lobby.listeners;
+package de.julius.lobby.ServerSelector;
 
 import de.julius.lobby.Lobby;
 import de.julius.lobby.util.ItemBuilder;
@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PlayerJoin implements Listener {
+public class ServerSelector implements Listener {
 
     public final Lobby plugin;
 
-    public PlayerJoin(Lobby plugin) {
+    public ServerSelector(Lobby plugin) {
         this.plugin = plugin;
     }
 

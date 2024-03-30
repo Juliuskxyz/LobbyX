@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static de.julius.lobby.listeners.PlayerJoin.getSelector;
+import static de.julius.lobby.ServerSelector.ServerSelector.getSelector;
 
 public class buildCommand implements CommandExecutor {
 
