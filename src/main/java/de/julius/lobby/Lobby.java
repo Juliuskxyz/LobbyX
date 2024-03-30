@@ -4,8 +4,12 @@ import de.julius.lobby.commands.buildCommand;
 import de.julius.lobby.listeners.*;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,14 +30,38 @@ public final class Lobby extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockListener(), this);
         getServer().getPluginManager().registerEvents(new BlockBurn(this), this);
         getServer().getPluginManager().registerEvents(new PlayerManager(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoin(this), this);
 
         //register Commands
         this.getCommand("build").setExecutor(new buildCommand(this));
+
+        // Register messaging channels
+        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
     }
+
+    public static void teleportPlayerToServer(final Player player, final String server, Plugin plugin){
+        final String message = plugin.getConfig().getString("server-teleport-message");
+        if (message != null) {
+            player.sendMessage(ChatColor.RED + "Du wirst nun abgeschoben.");
+        }
+
+        try (
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                DataOutputStream dos = new DataOutputStream(baos)
+        ){
+
+            dos.writeUTF("Connect");
+            dos.writeUTF(server);
+            player.sendPluginMessage(plugin, "BungeeCord", baos.toByteArray());
+        } catch (final IOException e){
+            e.printStackTrace();
+        }
+    }
+
 }
