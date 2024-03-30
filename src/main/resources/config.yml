@@ -1,0 +1,21 @@
+# Lobby Plugin Config
+# Autor: Julius aka IchBinLegal
+# Plugin Version 1.0
+# MC Version: 1.20.4
+
+join-message: "&9&lWillkommen zurück, %player%!"
+
+# Checks
+Disable-rain: true
+Hunger: true
+Damage: true
+Block-burn: true
+block-damage:
+Item-Use: true
+
+# Messages
+build-on: "&9Du bist nun im Build Modus."
+build-off: "&9Du bist nun nicht mehr im Build Modus."
+no-permission: "&9Du hast keine Berechtigung, diesen Befehl auszuführen."
+send-by-console: "&9Dieser Befehl kann nur von einem Spieler ausgeführt werden."
+DROP_DENY_MESSAGE: "&9Du kannst dieses Item nicht droppen."

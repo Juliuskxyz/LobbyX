@@ -1,0 +1,13 @@
+name: Lobby
+version: '${version}'
+main: de.julius.lobby.Lobby
+api-version: '1.20'
+authors: [Julius]
+description: Lobby Plugin for NebularSMP
+website: https://nebularnodes.com
+
+commands:
+  build:
+    description: Enables/Disables Building in the Lobby
+    usage: /<command>
+    permission: lobby.build
