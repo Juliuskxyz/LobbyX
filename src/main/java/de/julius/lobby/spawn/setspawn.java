@@ -42,7 +42,7 @@ public class setspawn implements CommandExecutor {
             System.out.println(" ");
             System.out.println(">> " + e.getStackTrace());
             System.out.println(" ");
-            System.out.println("You can report this on our Discord Server: " + Lobby.discordLink);
+            System.out.println("You can report this on our Discord Server: ");
             System.out.println(" ");
             player.sendMessage("§cAn error occurred while setting the Spawn.");
         }

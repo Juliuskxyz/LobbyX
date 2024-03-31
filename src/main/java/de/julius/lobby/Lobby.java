@@ -25,8 +25,6 @@ public final class Lobby extends JavaPlugin {
 
     public static List<Player> builders = new ArrayList<>();
 
-    public static String discordLink = "https://discord.gg/SDawN8MYEV";
-
     public static String prefix = ChatColor.GREEN + "Nebular" + ChatColor.GRAY + "SMP" + ChatColor.DARK_GREEN + " > ";
 
     private static TablistManager tablistManager;
