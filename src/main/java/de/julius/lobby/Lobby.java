@@ -6,6 +6,7 @@ import de.julius.lobby.commands.flyCommand;
 import de.julius.lobby.listeners.*;
 import de.julius.lobby.tablist.TablistManager;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,6 +25,8 @@ public final class Lobby extends JavaPlugin {
     public static String prefix = ChatColor.GREEN + "Nebular" + ChatColor.GRAY + "SMP" + ChatColor.DARK_GREEN + " > ";
 
     private static TablistManager tablistManager;
+
+    private static FileConfiguration config;
 
     @Override
     public void onEnable() {
@@ -47,6 +50,8 @@ public final class Lobby extends JavaPlugin {
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
         tablistManager = new TablistManager();
+
+        config = getConfig();
 
     }
 
@@ -76,5 +81,10 @@ public final class Lobby extends JavaPlugin {
         } catch (final IOException e){
             e.printStackTrace();
         }
+    }
+
+    public static String getConfigString(String string) {
+        String sendByConsole = config.getString(string);
+        return ChatColor.translateAlternateColorCodes('&', sendByConsole);
     }
 }

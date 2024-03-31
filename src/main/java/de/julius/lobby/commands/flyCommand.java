@@ -24,28 +24,24 @@ public class flyCommand implements CommandExecutor {
         }
 
         if (!(commandSender instanceof Player)) {
-            String sendByConsole = this.plugin.getConfig().getString("send-by-console");
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', sendByConsole));
+            commandSender.sendMessage(Lobby.getConfigString("send-by-console"));
             return true;
         }
 
         Player player = (Player) commandSender;
 
         if (!(player.hasPermission("lobby.fly"))) {
-            String noPermission = this.plugin.getConfig().getString("no-permission");
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', noPermission));
+            player.sendMessage(Lobby.getConfigString("no-permission"));
             return true;
         }
 
         if (player.getAllowFlight()) {
             player.setAllowFlight(false);
-            String disableFly = this.plugin.getConfig().getString("flying-disabled");
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', disableFly));
+            player.sendMessage(Lobby.getConfigString("flying-disabled"));
             return true;
         }else {
             player.setAllowFlight(true);
-            String enableFly = this.plugin.getConfig().getString("flying-enabled");
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', enableFly));
+            player.sendMessage(Lobby.getConfigString("flying-enabled"));
             return true;
         }
     }
