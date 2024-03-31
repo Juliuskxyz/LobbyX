@@ -1,6 +1,7 @@
 package de.julius.lobby.listeners;
 
 import de.julius.lobby.Lobby;
+import de.julius.lobby.util.spawnUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -33,6 +34,10 @@ public class JoinQuitListener implements Listener {
         if (joinMessage != null) {
             joinMessage = joinMessage.replace("%player%", e.getPlayer().getDisplayName());
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', joinMessage));
+        }
+
+        if (spawnUtils.get().getLocation("spawn") != null) {
+            player.teleport(spawnUtils.get().getLocation("spawn"));
         }
     }
 }
