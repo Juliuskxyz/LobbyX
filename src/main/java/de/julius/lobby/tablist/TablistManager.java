@@ -12,7 +12,7 @@ public class TablistManager {
         player.setPlayerListHeaderFooter(ChatColor.DARK_GRAY.toString() + ChatColor.STRIKETHROUGH + "           " +
                 ChatColor.DARK_GRAY + "[ " + ChatColor.BLUE + "Nebular " + ChatColor.DARK_GRAY + "]" +
                 ChatColor.DARK_GRAY.toString() + ChatColor.STRIKETHROUGH + "            " + ChatColor.RESET +
-                "\n" + "", "\n" + "" + ChatColor.GRAY + "play.nebularnodes.com");
+                "\n" + "", "\n" + "" + ChatColor.GRAY + "play.nebularnodes.com" + "\n" + ChatColor.DARK_GRAY + ChatColor.STRIKETHROUGH + "                                      ");
     }
 
     public void setAllPlayerTeams() {
