@@ -36,7 +36,7 @@ public class PlayerManager implements Listener {
     }
 
     @EventHandler
-    public void onItemMove(PlayerSwapHandItemsEvent e) {
+    public void onPlayerHandSwap(PlayerSwapHandItemsEvent e) {
         e.setCancelled(true);
     }
 
@@ -49,7 +49,7 @@ public class PlayerManager implements Listener {
     }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.LOW)
-    public void onItemMove(final InventoryClickEvent e) {
+    public void onItemInventoryClick(final InventoryClickEvent e) {
         if (!Lobby.builders.contains(e.getWhoClicked())) {
             e.setCancelled(
                     e.getClickedInventory() != null &&
@@ -59,7 +59,7 @@ public class PlayerManager implements Listener {
     }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.LOW)
-    public void onItemMove(final InventoryDragEvent e) {
+    public void onItemDrag(final InventoryDragEvent e) {
         if (!Lobby.builders.contains(e.getWhoClicked())) {
             e.setCancelled(
                     e.getInventory().getType() == InventoryType.PLAYER
