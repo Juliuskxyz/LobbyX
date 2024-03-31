@@ -25,8 +25,8 @@ public class JoinQuitListener implements Listener {
 
         e.setJoinMessage("");
 
-        Lobby.getInstance().getTablistManager().setPlayerList(player);
-        Lobby.getInstance().getTablistManager().setAllPlayerTeams();
+        Lobby.getTablistManager().setPlayerTeams(player);
+        Lobby.getTablistManager().setAllPlayerTeams();
 
         String joinMessage = this.plugin.getConfig().getString("join-message");
         if (joinMessage != null) {

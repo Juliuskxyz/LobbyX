@@ -23,7 +23,7 @@ public final class Lobby extends JavaPlugin {
 
     public static String prefix = ChatColor.GREEN + "Nebular" + ChatColor.GRAY + "SMP" + ChatColor.DARK_GREEN + " > ";
 
-    private TablistManager tablistManager;
+    private static TablistManager tablistManager;
 
     @Override
     public void onEnable() {
@@ -55,7 +55,7 @@ public final class Lobby extends JavaPlugin {
         // Plugin shutdown logic
     }
 
-    public TablistManager getTablistManager() {
+    public static TablistManager getTablistManager() {
         return tablistManager;
     }
 
