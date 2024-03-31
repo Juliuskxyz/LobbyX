@@ -15,3 +15,11 @@ commands:
     description: Enables/Disables Flying in the Lobby
     usage: /<command>
     permission: lobby.fly
+  setspawn:
+    description: Set a spawn
+    usage: /<command>
+    permission: lobby.setspawn
+  spawn:
+    description: Teleport to the Spawn
+    usage: /<command>
+    permission: lobby.spawn

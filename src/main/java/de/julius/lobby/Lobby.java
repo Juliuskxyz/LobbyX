@@ -4,7 +4,10 @@ import de.julius.lobby.ServerSelector.ServerSelector;
 import de.julius.lobby.commands.buildCommand;
 import de.julius.lobby.commands.flyCommand;
 import de.julius.lobby.listeners.*;
+import de.julius.lobby.spawn.setspawn;
+import de.julius.lobby.spawn.spawn;
 import de.julius.lobby.tablist.TablistManager;
+import de.julius.lobby.util.spawnUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -44,7 +47,9 @@ public final class Lobby extends JavaPlugin {
 
         //register Commands
         this.getCommand("build").setExecutor(new buildCommand(this));
-        this.getCommand("fly").setExecutor(new flyCommand(this));
+        this.getCommand("fly").setExecutor(new flyCommand());
+        this.getCommand("setspawn").setExecutor(new setspawn());
+        this.getCommand("spawn").setExecutor(new spawn());
 
         // Register messaging channels
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
@@ -53,6 +58,7 @@ public final class Lobby extends JavaPlugin {
 
         config = getConfig();
 
+        spawnUtils.setup();
     }
 
     @Override

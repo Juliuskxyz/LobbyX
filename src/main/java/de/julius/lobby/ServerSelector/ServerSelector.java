@@ -58,7 +58,6 @@ public class ServerSelector implements Listener {
     public void onInventoryClick(InventoryClickEvent e) {
 
         // Teleport Player to Server
-
         Player player = (Player) e.getWhoClicked();
         if (e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR) return;
         if (e.getCurrentItem().getType() == Material.CHERRY_SAPLING) {
@@ -71,7 +70,7 @@ public class ServerSelector implements Listener {
         ItemMeta ServerSelectorMeta = ServerSelector.getItemMeta();
 
         ServerSelectorMeta.setDisplayName("§c§lServer Selector");
-        ArrayList<String> LoreList = new ArrayList<String>();
+        ArrayList<String> LoreList = new ArrayList<>();
         LoreList.add(ChatColor.GRAY + "» Select The Server You");
         LoreList.add(ChatColor.GRAY + "» Wish To Play On");
 
@@ -87,7 +86,6 @@ public class ServerSelector implements Listener {
         Inventory gui = Bukkit.createInventory(null, 27, "§9§lNebular§8 » §lServers");
 
         // GUI Items
-
         integerItemStackHashMap.put(0, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("§b").build());
         integerItemStackHashMap.put(1, new ItemBuilder(Material.BLUE_STAINED_GLASS_PANE).setDisplayname("§b").build());
         integerItemStackHashMap.put(7, new ItemBuilder(Material.BLUE_STAINED_GLASS_PANE).setDisplayname("§b").build());
