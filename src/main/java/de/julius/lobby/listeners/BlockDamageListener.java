@@ -4,7 +4,7 @@ import de.julius.lobby.Lobby;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockDamageEvent;
+import org.bukkit.event.entity.EntityExplodeEvent;
 
 public class BlockDamageListener implements Listener {
 
@@ -14,10 +14,10 @@ public class BlockDamageListener implements Listener {
         this.plugin = plugin;
     }
 
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.LOW)
-    public void onBlockDamage(BlockDamageEvent e) {
-        if (plugin.getConfig().getBoolean("block-damage"))
-            e.setCancelled(true);
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void onEntityExplode(EntityExplodeEvent e) {
+        if (plugin.getConfig().getBoolean("block-explode"))
+            e.blockList().clear();
     }
 
 }

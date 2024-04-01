@@ -48,6 +48,7 @@ public final class Lobby extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockBurn(this), this);
         getServer().getPluginManager().registerEvents(new PlayerManager(this), this);
         getServer().getPluginManager().registerEvents(new ServerSelector(this), this);
+        getServer().getPluginManager().registerEvents(new BlockDamageListener(this), this);
 
         //register Commands
         this.getCommand("build").setExecutor(new buildCommand(this));

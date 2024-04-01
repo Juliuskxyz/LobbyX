@@ -10,7 +10,7 @@ Disable-rain: true
 Hunger: true
 Damage: true
 Block-burn: true
-block-damage:
+block-explode: true
 Item-Use: true
 
 # Messages
