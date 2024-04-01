@@ -23,6 +23,8 @@ public class JoinQuitListener implements Listener {
 
         Player player = e.getPlayer();
 
+        e.getPlayer().getInventory().clear();
+
         player.setGameMode(GameMode.ADVENTURE);
 
         e.setJoinMessage("");

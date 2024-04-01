@@ -14,7 +14,7 @@ public class ScoreboardUtils {
         int onlinePlayers = Bukkit.getOnlinePlayers().size();
 
         Scoreboard s = Bukkit.getScoreboardManager().getNewScoreboard();
-        Objective objective = s.registerNewObjective("main", "main", "    §a§lɴᴇʙᴜʟᴀʀ §f§lɴᴇᴛᴡᴏʀᴋ");
+        Objective objective = s.registerNewObjective("main", "main", "    §9§lɴᴇʙᴜʟᴀʀ §f§lɴᴇᴛᴡᴏʀᴋ");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         objective.getScore("    §8◆§m                                   §r§8◆  ").setScore(7);
