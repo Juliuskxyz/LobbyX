@@ -1,5 +1,6 @@
 package de.julius.lobby;
 
+import com.velocitypowered.api.proxy.ProxyServer;
 import de.julius.lobby.ServerSelector.ServerSelector;
 import de.julius.lobby.commands.buildCommand;
 import de.julius.lobby.commands.flyCommand;
@@ -8,11 +9,15 @@ import de.julius.lobby.spawn.setspawn;
 import de.julius.lobby.spawn.spawn;
 import de.julius.lobby.tablist.TablistManager;
 import de.julius.lobby.util.spawnUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.ScoreboardManager;
 
 
 import java.io.ByteArrayOutputStream;
@@ -24,17 +29,16 @@ import java.util.List;
 public final class Lobby extends JavaPlugin {
 
     public static List<Player> builders = new ArrayList<>();
-
     public static String prefix = ChatColor.GREEN + "Nebular" + ChatColor.GRAY + "SMP" + ChatColor.DARK_GREEN + " > ";
-
     private static TablistManager tablistManager;
-
     private static FileConfiguration config;
+    private static Lobby instance;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
 
+        instance = this;
         saveDefaultConfig();
 
         // Register Listeners

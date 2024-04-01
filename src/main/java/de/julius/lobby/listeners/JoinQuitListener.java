@@ -1,6 +1,7 @@
 package de.julius.lobby.listeners;
 
 import de.julius.lobby.Lobby;
+import de.julius.lobby.util.ScoreboardUtils;
 import de.julius.lobby.util.spawnUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -25,6 +26,8 @@ public class JoinQuitListener implements Listener {
         player.setGameMode(GameMode.ADVENTURE);
 
         e.setJoinMessage("");
+
+        e.getPlayer().setScoreboard(ScoreboardUtils.getBaseScoreboard(e.getPlayer()));
 
         Lobby.getTablistManager().setPlayerTeams(player);
         Lobby.getTablistManager().setAllPlayerTeams();
