@@ -97,7 +97,17 @@ public class ServerSelector implements Listener {
         integerItemStackHashMap.put(25, new ItemBuilder(Material.BLUE_STAINED_GLASS_PANE).setDisplayname("§b").build());
         integerItemStackHashMap.put(26, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("§b").build());
 
+        integerItemStackHashMap.put(11, new ItemBuilder(Material.GRASS_BLOCK).setDisplayname(ChatColor.BLUE + "" + ChatColor.BOLD + "ᴄᴏᴍɪɴɢ ꜱᴏᴏɴ").setLocalizedName("nebularsmp").build());
+        for (Map.Entry<Integer, ItemStack> integerItemStackEntry : integerItemStackHashMap.entrySet()) {
+            gui.setItem(integerItemStackEntry.getKey(), integerItemStackEntry.getValue());
+        }
+
         integerItemStackHashMap.put(13, new ItemBuilder(Material.CHERRY_SAPLING).setDisplayname(ChatColor.BLUE + "" + ChatColor.BOLD + "ɴᴇʙᴜʟᴀʀꜱᴍᴘ").setLocalizedName("nebularsmp").setLore(ChatColor.GRAY + "ᴋʟɪᴄᴋᴇ " + ChatColor.BLUE + "ʜɪᴇʀ " + ChatColor.GRAY + "ᴜᴍ ᴢᴜ " + ChatColor.BLUE + "ɴᴇʙᴜʟᴀʀꜱᴍᴘ " + ChatColor.GRAY + "ᴢᴜ ɢᴇʟᴀɴɢᴇɴ.").build());
+        for (Map.Entry<Integer, ItemStack> integerItemStackEntry : integerItemStackHashMap.entrySet()) {
+            gui.setItem(integerItemStackEntry.getKey(), integerItemStackEntry.getValue());
+        }
+
+        integerItemStackHashMap.put(15, new ItemBuilder(Material.CACTUS).setDisplayname(ChatColor.BLUE + "" + ChatColor.BOLD + "ᴄᴏᴍɪɴɢ ꜱᴏᴏɴ").setLocalizedName("nebularsmp").build());
         for (Map.Entry<Integer, ItemStack> integerItemStackEntry : integerItemStackHashMap.entrySet()) {
             gui.setItem(integerItemStackEntry.getKey(), integerItemStackEntry.getValue());
         }
