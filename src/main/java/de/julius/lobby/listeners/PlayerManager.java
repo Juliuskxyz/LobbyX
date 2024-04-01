@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
@@ -28,10 +29,7 @@ public class PlayerManager implements Listener {
     public void onItemPickup(EntityPickupItemEvent e) {
         if (e.getEntity() instanceof Player) {
             Player player = (Player) e.getEntity();
-
-            if (!player.hasPermission(Permission.ITEM_PICKUP)) {
                 e.setCancelled(true);
-            }
         }
     }
 
@@ -81,6 +79,11 @@ public class PlayerManager implements Listener {
                 e.setCancelled(true);
             }
         }
+    }
+
+    @EventHandler
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent e) {
+            e.setCancelled(true);
     }
 
     @EventHandler
