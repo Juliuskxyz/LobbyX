@@ -35,7 +35,7 @@ public class TablistManager {
             operators = scoreboard.registerNewTeam("001owners");
         }
 
-        players.setPrefix(ChatColor.GRAY + "Player" + ChatColor.DARK_GRAY + "| ");
+        players.setPrefix(ChatColor.GRAY + "Player " + ChatColor.DARK_GRAY + "| ");
         players.setColor(ChatColor.GRAY);
 
         operators.setPrefix(ChatColor.DARK_RED + "Owner " + ChatColor.DARK_GRAY + "| ");
