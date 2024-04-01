@@ -97,7 +97,7 @@ public class ServerSelector implements Listener {
         integerItemStackHashMap.put(25, new ItemBuilder(Material.BLUE_STAINED_GLASS_PANE).setDisplayname("§b").build());
         integerItemStackHashMap.put(26, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("§b").build());
 
-        integerItemStackHashMap.put(13, new ItemBuilder(Material.CHERRY_SAPLING).setDisplayname(ChatColor.BLUE + "" + ChatColor.BOLD + "NebularSMP").setLocalizedName("nebularsmp").setLore(ChatColor.GRAY + "Klicke " + ChatColor.BLUE + "hier " + ChatColor.GRAY + "um zu " + ChatColor.BLUE + "NebularSMP " + ChatColor.GRAY + "zu gelangen.").build());
+        integerItemStackHashMap.put(13, new ItemBuilder(Material.CHERRY_SAPLING).setDisplayname(ChatColor.BLUE + "" + ChatColor.BOLD + "ɴᴇʙᴜʟᴀʀꜱᴍᴘ").setLocalizedName("nebularsmp").setLore(ChatColor.GRAY + "ᴋʟɪᴄᴋᴇ " + ChatColor.BLUE + "ʜɪᴇʀ " + ChatColor.GRAY + "ᴜᴍ ᴢᴜ " + ChatColor.BLUE + "ɴᴇʙᴜʟᴀʀꜱᴍᴘ " + ChatColor.GRAY + "ᴢᴜ ɢᴇʟᴀɴɢᴇɴ.").build());
         for (Map.Entry<Integer, ItemStack> integerItemStackEntry : integerItemStackHashMap.entrySet()) {
             gui.setItem(integerItemStackEntry.getKey(), integerItemStackEntry.getValue());
         }
