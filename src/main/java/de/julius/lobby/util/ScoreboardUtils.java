@@ -1,5 +1,6 @@
 package de.julius.lobby.util;
 
+import de.julius.lobby.Lobby;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -12,24 +13,13 @@ public class ScoreboardUtils {
 
         int onlinePlayers = Bukkit.getOnlinePlayers().size();
 
-        String rank;
-        if (player.hasPermission("lobby.owner")) {
-            rank = "§9Owner";
-        } else if (player.hasPermission("lobby.admin")) {
-            rank = "§cAdministrator";
-        } else if (player.hasPermission("lobby.mod")) {
-            rank = "§2Moderator";
-        } else {
-            rank = "§fPlayer";
-        }
-
         Scoreboard s = Bukkit.getScoreboardManager().getNewScoreboard();
         Objective objective = s.registerNewObjective("main", "main", "    §9§lɴᴇʙᴜʟᴀʀ §f§lɴᴇᴛᴡᴏʀᴋ");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         objective.getScore("    §8◆§m                                   §r§8◆  ").setScore(7);
         objective.getScore("      §lᴘʟᴀʏᴇʀ").setScore(6);
-        objective.getScore("       §8 ▪ §7ʀᴀɴᴋ: " + rank).setScore(5);
+        objective.getScore("       §8 ▪ §7ʀᴀɴᴋ: " + Lobby.getPlayerRank(player)).setScore(5);
         objective.getScore("       §8 ▪ §7ᴘɪɴɢ: " + "§f" + player.getPing()).setScore(4);
         objective.getScore("      §lꜱᴇʀᴠᴇʀ").setScore(3);
         objective.getScore("       §8 ▪ §7ᴏɴʟɪɴᴇ: " + "§f" + onlinePlayers).setScore(2);

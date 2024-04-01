@@ -92,4 +92,20 @@ public final class Lobby extends JavaPlugin {
         String sendByConsole = config.getString(string);
         return ChatColor.translateAlternateColorCodes('&', sendByConsole);
     }
+
+    public static String getPlayerRank(Player player) {
+
+        String rank;
+        if (player.hasPermission("lobby.owner")) {
+            rank = "§9ᴏᴡɴᴇʀ";
+        } else if (player.hasPermission("lobby.admin")) {
+            rank = "§cᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀ";
+        } else if (player.hasPermission("lobby.mod")) {
+            rank = "§2ᴍᴏᴅᴇʀᴀᴛᴏʀ";
+        } else {
+            rank = "§fᴘʟᴀʏᴇʀ";
+        }
+        return rank;
+    }
+
 }
