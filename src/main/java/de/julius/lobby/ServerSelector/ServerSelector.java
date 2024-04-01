@@ -38,7 +38,7 @@ public class ServerSelector implements Listener {
             if (e.getCurrentItem() == null) {
                 return;
             }
-            if (e.getView().getTitle().equals("§9§lNebular§8 » §lServers")) {
+            if (e.getView().getTitle().equals("§9§lɴᴇʙᴜʟᴀʀ §f§lɴᴇᴛᴡᴏʀᴋ")) {
                 e.setCancelled(true);
             }
         }
@@ -69,7 +69,7 @@ public class ServerSelector implements Listener {
         ItemStack ServerSelector = new ItemStack(Material.CLOCK);
         ItemMeta ServerSelectorMeta = ServerSelector.getItemMeta();
 
-        ServerSelectorMeta.setDisplayName("§c§lServer Selector");
+        ServerSelectorMeta.setDisplayName("§c§lꜱᴇʀᴠᴇʀ ꜱᴇʟᴇᴄᴛᴏʀ");
         ArrayList<String> LoreList = new ArrayList<>();
         LoreList.add(ChatColor.GRAY + "» Select The Server You");
         LoreList.add(ChatColor.GRAY + "» Wish To Play On");
@@ -83,7 +83,7 @@ public class ServerSelector implements Listener {
     public void openGUI(Player player) {
         HashMap<Integer, ItemStack> integerItemStackHashMap = new HashMap<>();
 
-        Inventory gui = Bukkit.createInventory(null, 27, "§9§lNebular§8 » §lServers");
+        Inventory gui = Bukkit.createInventory(null, 27, "§9§lɴᴇʙᴜʟᴀʀ §f§lɴᴇᴛᴡᴏʀᴋ");
 
         // GUI Items
         integerItemStackHashMap.put(0, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("§b").build());
