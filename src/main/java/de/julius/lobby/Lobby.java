@@ -1,6 +1,5 @@
 package de.julius.lobby;
 
-import com.velocitypowered.api.proxy.ProxyServer;
 import de.julius.lobby.ServerSelector.ServerSelector;
 import de.julius.lobby.commands.buildCommand;
 import de.julius.lobby.commands.flyCommand;
@@ -9,15 +8,11 @@ import de.julius.lobby.spawn.setspawn;
 import de.julius.lobby.spawn.spawn;
 import de.julius.lobby.tablist.TablistManager;
 import de.julius.lobby.util.spawnUtils;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
 
 
 import java.io.ByteArrayOutputStream;
@@ -36,7 +31,6 @@ public final class Lobby extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
 
         instance = this;
         saveDefaultConfig();
@@ -75,7 +69,7 @@ public final class Lobby extends JavaPlugin {
         return tablistManager;
     }
 
-    public static void teleportPlayerToServer(final Player player, final String server, Plugin plugin){
+    public static void teleportPlayerToServer(final Player player, final String server, Plugin plugin) {
         final String message = plugin.getConfig().getString("server-teleport-message");
         if (message != null) {
             player.sendMessage(ChatColor.RED + "Du wirst nun abgeschoben.");
@@ -84,12 +78,12 @@ public final class Lobby extends JavaPlugin {
         try (
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 DataOutputStream dos = new DataOutputStream(baos)
-        ){
+        ) {
 
             dos.writeUTF("Connect");
             dos.writeUTF(server);
             player.sendPluginMessage(plugin, "BungeeCord", baos.toByteArray());
-        } catch (final IOException e){
+        } catch (final IOException e) {
             e.printStackTrace();
         }
     }
