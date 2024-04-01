@@ -10,9 +10,9 @@ public class TablistManager {
 
     public void setTablist(Player player) {
         player.setPlayerListHeaderFooter(ChatColor.DARK_GRAY.toString() + ChatColor.STRIKETHROUGH + "           " +
-                ChatColor.DARK_GRAY + "[ " + ChatColor.BLUE + "Nebular " + ChatColor.DARK_GRAY + "]" +
+                ChatColor.DARK_GRAY + "[ " + ChatColor.BLUE + "ɴᴇʙᴜʟᴀʀ " + ChatColor.DARK_GRAY + "]" +
                 ChatColor.DARK_GRAY.toString() + ChatColor.STRIKETHROUGH + "            " + ChatColor.RESET +
-                "\n" + "", "\n" + "" + ChatColor.GRAY + "play.nebularnodes.com" + "\n" + ChatColor.DARK_GRAY + ChatColor.STRIKETHROUGH
+                "\n" + "", "\n" + "" + ChatColor.GRAY + "ᴘʟᴀʏ.ɴᴇʙᴜʟᴀʀɴᴏᴅᴇꜱ.ᴄᴏᴍ" + "\n" + ChatColor.DARK_GRAY + ChatColor.STRIKETHROUGH
                 + "                                      ");
     }
 
@@ -35,10 +35,10 @@ public class TablistManager {
             operators = scoreboard.registerNewTeam("001owners");
         }
 
-        players.setPrefix(ChatColor.GRAY + "Player " + ChatColor.DARK_GRAY + "| ");
+        players.setPrefix(ChatColor.GRAY + "ᴘʟᴀʏᴇʀ " + ChatColor.DARK_GRAY + "| ");
         players.setColor(ChatColor.GRAY);
 
-        operators.setPrefix(ChatColor.DARK_RED + "Owner " + ChatColor.DARK_GRAY + "| ");
+        operators.setPrefix(ChatColor.DARK_RED + "ᴏᴡɴᴇʀ " + ChatColor.DARK_GRAY + "| ");
         operators.setColor(ChatColor.GRAY);
 
         for (Player target : Bukkit.getOnlinePlayers()) {
