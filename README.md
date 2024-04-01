@@ -19,11 +19,11 @@ Download the latest Release and drop the file in your Plugins folder.
 
 ## Screenshots
 
-![Server Selector](https://cdn.discordapp.com/attachments/1222267228318072842/1224396983205363792/image.png?ex=661d578c&is=660ae28c&hm=40724c6250e373af7f21f2e88e22f8c1870b3c71a6ecda33a810739b89db330d&)
+![Server Selector](https://cdn.discordapp.com/attachments/1222267228318072842/1224433347225321494/server_selector.png?ex=661d796a&is=660b046a&hm=f93a7b42c876e1b02215862103adeb7051e4a1da4c77118fb268be7ce255ddcd&)
 
-![Tablist](https://cdn.discordapp.com/attachments/1222267228318072842/1224397383102759044/image.png?ex=661d57ec&is=660ae2ec&hm=bd2edc9f38db8b1284680f732e34171ba7a2e0b679951428b3c1bce19487464a&)
+![Tablist](https://cdn.discordapp.com/attachments/1222267228318072842/1224433380138156062/Tablist.png?ex=661d7972&is=660b0472&hm=27eef08211b6bf3a894a6e3e9eeee6ee40690b3b9935d3eb7486a07d769522fd&)
 
-![Scoreboard](https://cdn.discordapp.com/attachments/1222267228318072842/1224397232468660387/image.png?ex=661d57c8&is=660ae2c8&hm=89025e599b26400275a21c0c1d4054b4c18fce3d8f39d10a902266efb06b1a54&)
+![Scoreboard](https://cdn.discordapp.com/attachments/1222267228318072842/1224433368138252421/scoreboard.png?ex=661d796f&is=660b046f&hm=ff861555703d40e46b26b696b8cb2140df6b82ff8879e18705bc14ef6842d3a6&)
 
 ## Features
 
