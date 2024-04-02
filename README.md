@@ -49,16 +49,11 @@ Download the latest Release and drop the file in your Plugins folder.
 ## ToDo
 
 - Tablist Permissions
-- Scoreboard
-- MOTD
-- everything configurable
-
 
 ## Authors
 
 - [@Julius](https://github.com/Juliuskxyz)
 - [@Michele](https://github.com/MiSkynet)
-
 
 
 ## Acknowledgements
