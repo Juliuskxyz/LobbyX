@@ -23,31 +23,48 @@ public class TablistManager {
     public void setPlayerTeams(Player player) {
         Scoreboard scoreboard = player.getScoreboard();
 
-        Team players = scoreboard.getTeam("010players");
-
+        Team players = scoreboard.getTeam("1000players");
         if (players == null) {
-            players = scoreboard.registerNewTeam("010players");
+            players = scoreboard.registerNewTeam("1000players");
         }
+        players.setPrefix("§fᴘʟᴀʏᴇʀ §8| §7");
+        players.setColor(ChatColor.GRAY);
+
+
+        Team admins = scoreboard.getTeam("0010admin");
+        if (admins == null) {
+            admins = scoreboard.registerNewTeam("0010admin");
+        }
+        admins.setPrefix("§cᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀ §8| §7");
+        admins.setColor(ChatColor.GRAY);
+
+        Team moderators = scoreboard.getTeam("0100moderator");
+        if (moderators == null) {
+            moderators = scoreboard.registerNewTeam("0100moderator");
+        }
+        moderators.setPrefix("§2ᴍᴏᴅᴇʀᴀᴛᴏʀ §8| §7");
+        moderators.setColor(ChatColor.GRAY);
 
         Team operators = scoreboard.getTeam("001owners");
-
         if (operators == null) {
             operators = scoreboard.registerNewTeam("001owners");
         }
-
-        players.setPrefix(ChatColor.GRAY + "ᴘʟᴀʏᴇʀ " + ChatColor.DARK_GRAY + "| ");
-        players.setColor(ChatColor.GRAY);
-
-        operators.setPrefix(ChatColor.DARK_RED + "ᴏᴡɴᴇʀ " + ChatColor.DARK_GRAY + "| ");
+        operators.setPrefix("§9ᴏᴡɴᴇʀ §8| §7");
         operators.setColor(ChatColor.GRAY);
 
         for (Player target : Bukkit.getOnlinePlayers()) {
-            if (target.isOp()) {
+            if (player.hasPermission("lobby.owner")) {
                 operators.addEntry(target.getName());
-                continue;
+            } else if (player.hasPermission("lobby.admin")) {
+                admins.addEntry(target.getName());
+            } else if (player.hasPermission("lobby.mod")) {
+                moderators.addEntry(target.getName());
+            } else {
+                players.addEntry(target.getName());
             }
-
-            players.addEntry(target.getName());
         }
+
+
     }
+
 }

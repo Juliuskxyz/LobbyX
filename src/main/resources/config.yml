@@ -23,3 +23,9 @@ flying-enabled: "§9Du kannst jetzt fliegen."
 flying-disabled: "§9Du kannst jetzt nicht mehr fliegen."
 spawn-set: "§9Du hast einen neuen Spawnpunkt gesetzt."
 spawn-teleport: "§9Du bist jetzt am Spawn."
+
+
+server-selector:
+  server-one:
+    item: CHERRY_SAPLING
+    ip: nebularsmp

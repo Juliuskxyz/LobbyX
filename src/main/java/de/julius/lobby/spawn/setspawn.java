@@ -2,6 +2,7 @@ package de.julius.lobby.spawn;
 
 import de.julius.lobby.Lobby;
 import de.julius.lobby.util.spawnUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -37,13 +38,13 @@ public class setspawn implements CommandExecutor {
             spawnUtils.save();
             player.sendMessage(Lobby.getConfigString("spawn-set"));
         }catch (Exception e) {
-            System.out.println(" ");
-            System.out.println("An error occurred while setting the Spawn:");
-            System.out.println(" ");
-            System.out.println(">> " + e.getStackTrace());
-            System.out.println(" ");
-            System.out.println("You can report this on our Discord Server: ");
-            System.out.println(" ");
+            Bukkit.getLogger().warning(" ");
+            Bukkit.getLogger().warning("An error occurred while setting the Spawn:");
+            Bukkit.getLogger().warning(" ");
+            Bukkit.getLogger().warning(">> " + e.getStackTrace());
+            Bukkit.getLogger().warning(" ");
+            Bukkit.getLogger().warning("You can report this on our Discord Server: " + Lobby.discordLink);
+            Bukkit.getLogger().warning(" ");
             player.sendMessage("§cAn error occurred while setting the Spawn.");
         }
 
