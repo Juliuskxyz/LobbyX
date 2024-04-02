@@ -99,7 +99,7 @@ public final class Lobby extends JavaPlugin {
         try {
             String rank;
             if (player.hasPermission("lobby.owner")) {
-                rank = "§9ᴏᴡɴᴇʀ §8| §7";
+                rank = "§4ᴏᴡɴᴇʀ §8| §7";
             } else if (player.hasPermission("lobby.admin")) {
                 rank = "§cᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀ §8| §7";
             } else if (player.hasPermission("lobby.mod")) {
