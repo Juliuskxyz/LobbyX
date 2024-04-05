@@ -9,7 +9,6 @@ public class BlockBurn implements Listener {
 
     private final Lobby plugin;
 
-
     public BlockBurn(Lobby plugin) {
         this.plugin = plugin;
     }

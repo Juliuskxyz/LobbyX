@@ -8,12 +8,12 @@ import de.julius.lobby.spawn.setspawn;
 import de.julius.lobby.spawn.spawn;
 import de.julius.lobby.tablist.TablistManager;
 import de.julius.lobby.util.spawnUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -24,6 +24,7 @@ import java.util.List;
 public final class Lobby extends JavaPlugin {
 
     public static List<Player> builders = new ArrayList<>();
+    public static String discordLink = "discord.gg/SDawN8MYEV";
     public static String prefix = ChatColor.GREEN + "Nebular" + ChatColor.GRAY + "SMP" + ChatColor.DARK_GREEN + " > ";
     private static TablistManager tablistManager;
     private static FileConfiguration config;
@@ -31,6 +32,7 @@ public final class Lobby extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Plugin startup logic
 
         instance = this;
         saveDefaultConfig();
@@ -42,7 +44,6 @@ public final class Lobby extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockBurn(this), this);
         getServer().getPluginManager().registerEvents(new PlayerManager(this), this);
         getServer().getPluginManager().registerEvents(new ServerSelector(this), this);
-        getServer().getPluginManager().registerEvents(new BlockDamageListener(this), this);
 
         //register Commands
         this.getCommand("build").setExecutor(new buildCommand(this));
@@ -69,7 +70,7 @@ public final class Lobby extends JavaPlugin {
         return tablistManager;
     }
 
-    public static void teleportPlayerToServer(final Player player, final String server, Plugin plugin) {
+    public static void teleportPlayerToServer(final Player player, final String server, Plugin plugin){
         final String message = plugin.getConfig().getString("server-teleport-message");
         if (message != null) {
             player.sendMessage(ChatColor.RED + "Du wirst nun abgeschoben.");
@@ -78,12 +79,12 @@ public final class Lobby extends JavaPlugin {
         try (
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 DataOutputStream dos = new DataOutputStream(baos)
-        ) {
+        ){
 
             dos.writeUTF("Connect");
             dos.writeUTF(server);
             player.sendPluginMessage(plugin, "BungeeCord", baos.toByteArray());
-        } catch (final IOException e) {
+        } catch (final IOException e){
             e.printStackTrace();
         }
     }
@@ -95,17 +96,30 @@ public final class Lobby extends JavaPlugin {
 
     public static String getPlayerRank(Player player) {
 
-        String rank;
-        if (player.hasPermission("lobby.owner")) {
-            rank = "§9ᴏᴡɴᴇʀ";
-        } else if (player.hasPermission("lobby.admin")) {
-            rank = "§cᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀ";
-        } else if (player.hasPermission("lobby.mod")) {
-            rank = "§2ᴍᴏᴅᴇʀᴀᴛᴏʀ";
-        } else {
-            rank = "§fᴘʟᴀʏᴇʀ";
+        try {
+            String rank;
+            if (player.hasPermission("lobby.owner")) {
+                rank = "§4ᴏᴡɴᴇʀ §8| §7";
+            } else if (player.hasPermission("lobby.admin")) {
+                rank = "§cᴀᴅᴍɪɴɪꜱᴛʀᴀᴛᴏʀ §8| §7";
+            } else if (player.hasPermission("lobby.mod")) {
+                rank = "§2ᴍᴏᴅᴇʀᴀᴛᴏʀ §8| §7";
+            } else {
+                rank = "§fᴘʟᴀʏᴇʀ §8| §7";
+            }
+            return rank;
+        }catch (Exception e) {
+            Bukkit.getLogger().warning(" ");
+            Bukkit.getLogger().warning("An error occurred joining:");
+            Bukkit.getLogger().warning(" ");
+            Bukkit.getLogger().warning(">> " + e.getStackTrace());
+            Bukkit.getLogger().warning(" ");
+            Bukkit.getLogger().warning("You can report this on our Discord Server: " + Lobby.discordLink);
+            Bukkit.getLogger().warning(" ");
+            player.sendMessage("§cAn error occurred while joining.");
+            return "";
         }
-        return rank;
+
     }
 
 }
