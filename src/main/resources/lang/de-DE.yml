@@ -1,0 +1,25 @@
+join-message-personal: "§9§lWillkommen zurück, %player%!"
+join-message-global: ""
+quit-message: ""
+
+no-permission: "§9Hast keine Rechte, diesen Befehl auszuführen."
+send-by-console: "§9Dieser Befehl kann nur von einem Spieler ausgeführt werden."
+drop-deny-message: "§9Du kannst dieses Item nicht fallen lassen."
+
+server-teleport-message: "§9Du wirst nach %server_name% verschoben."
+
+command:
+  fly:
+    enabled: "§9Du kannst jetzt fliegen. (Ändere deine Fluggschwindikeit mit /fly <speed>)"
+    disabled: "§9Du kannst jetzt nicht mehr fliegen."
+    wrong-use: "§cFalsche benutzung! Bitte benutze /fly <speed>"
+    speed: "§cBitte wähle eine Fluggschwindigkeit zwischen 1-10."
+
+  build:
+    enabled: "§9Du bist jetzt im Baumodus."
+    disabled: "§9Du bist nicht länger im Baumodus."
+
+  spawn:
+    set: "§9Du hast einen neuen Spawnpunkt gesetzt."
+    teleport: "§9Du bist jetzt am Spawn."
+    no-spawn-set: "§9§cEntschuldige, aktuell ist aber kein Spawn gesetzt."

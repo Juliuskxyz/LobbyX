@@ -20,7 +20,6 @@ repositories {
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT"}
 
-
 def targetJavaVersion = 17
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
@@ -46,4 +45,42 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
+}
+
+//LuckPerms
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'net.luckperms:api:5.4'
+}
+
+// PlacholderAPI
+
+repositories {
+    maven {
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+}
+
+dependencies {
+    compileOnly 'me.clip:placeholderapi:2.11.5'
+}
+
+// bStats
+
+repositories {
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/groups/public/"
+    }
+}
+
+dependencies {
+    // Spigot as an example
+    implementation 'org.spigotmc:spigot-api:1.20.4'
+
+    // bStats
+    implementation 'org.bstats:bstats-bukkit:3.0.2'
 }

@@ -20,7 +20,6 @@ public class buildCommand implements CommandExecutor {
     }
 
     @Override
-
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
 
         if (command.getName().equalsIgnoreCase("build")) {
@@ -29,23 +28,23 @@ public class buildCommand implements CommandExecutor {
                 if (player.hasPermission("lobby.build")) {
                     if (!Lobby.builders.contains(player)) {
                         Lobby.builders.add(player);
-                        String buildOnMessage = this.plugin.getConfig().getString("build-on");
+                        String buildOnMessage = Lobby.getConfigStrings("command.build.enabled");
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', buildOnMessage));
                         player.setGameMode(GameMode.CREATIVE);
                         player.getInventory().clear();
                     } else {
                         Lobby.builders.remove(player);
-                        String buildOffMessage = this.plugin.getConfig().getString("build-off");
+                        String buildOffMessage = Lobby.getConfigStrings("command.build.disabled");
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', buildOffMessage));
                         player.setGameMode(GameMode.ADVENTURE);
                         player.getInventory().setItem(4, getSelector());
                     }
                 } else {
-                    String noPermission = this.plugin.getConfig().getString("no-permission");
+                    String noPermission = Lobby.getConfigStrings("no-permission");
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', noPermission));
                 }
             } else {
-                String sendByConsole = this.plugin.getConfig().getString("send-by-console");
+                String sendByConsole = Lobby.getConfigStrings("send-by-console");
                 commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', sendByConsole));
             }
             return true;

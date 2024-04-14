@@ -1,7 +1,6 @@
 package de.julius.lobby.listeners;
 
 import de.julius.lobby.Lobby;
-import de.julius.lobby.util.Permission;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

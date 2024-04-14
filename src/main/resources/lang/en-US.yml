@@ -1,0 +1,25 @@
+join-message-personal: "§9§lWelcome back, %player%!"
+join-message-global: ""
+quit-message: ""
+
+no-permission: "§9You do not have permission to run this command."
+send-by-console: "§9This command can only be executed by one player."
+drop-deny-message: "§9You cannot drop this item."
+
+server-teleport-message: "§9You´ll be teleported to %server_name%."
+
+command:
+  fly:
+    enabled: "§9You can fly now. (Change your flyspeed with /fly <speed>)"
+    disabled: "§9You can't fly now."
+    wrong-use: "§cWrong Use! please use /fly <speed>"
+    speed: "§cPlease select a Fly Speed Value between 1-10"
+
+  build:
+    enabled: "§9You are now in build mode. "
+    disabled: "§9You are now no longer in build mode."
+
+  spawn:
+    set: "§9You have set a new spawn point."
+    teleport: "§9You are now at spawn."
+    no-spawn-set: "§9§cSorry, but there is currently no spawn set."

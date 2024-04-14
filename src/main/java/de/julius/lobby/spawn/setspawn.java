@@ -20,14 +20,14 @@ public class setspawn implements CommandExecutor {
         }
 
         if (!(commandSender instanceof Player)) {
-            commandSender.sendMessage(Lobby.getConfigString("send-by-console"));
+            commandSender.sendMessage(Lobby.getConfigStrings("send-by-console"));
             return true;
         }
 
         Player player = (Player) commandSender;
 
         if (!(player.hasPermission("lobby.setspawn"))) {
-            player.sendMessage(Lobby.getConfigString("no-permission"));
+            player.sendMessage(Lobby.getConfigStrings("no-permission"));
             return true;
         }
 
@@ -36,7 +36,7 @@ public class setspawn implements CommandExecutor {
         try {
             spawnUtils.get().set("spawn", currentPlayerLocation);
             spawnUtils.save();
-            player.sendMessage(Lobby.getConfigString("spawn-set"));
+            player.sendMessage(Lobby.getConfigStrings("command.spawn.set"));
         }catch (Exception e) {
             Bukkit.getLogger().warning(" ");
             Bukkit.getLogger().warning("An error occurred while setting the Spawn:");

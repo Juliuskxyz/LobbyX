@@ -17,24 +17,24 @@ public class spawn implements CommandExecutor {
         }
 
         if (!(commandSender instanceof Player)) {
-            commandSender.sendMessage(Lobby.getConfigString("send-by-console"));
+            commandSender.sendMessage(Lobby.getConfigStrings("send-by-console"));
             return true;
         }
 
         Player player = (Player) commandSender;
 
         if (!(player.hasPermission("lobby.spawn"))) {
-            player.sendMessage(Lobby.getConfigString("no-permission"));
+            player.sendMessage(Lobby.getConfigStrings("no-permission"));
             return true;
         }
 
         if (spawnUtils.get().getLocation("spawn") == null) {
-            player.sendMessage("§cSorry, but there is currently no spawn set.");
+            player.sendMessage(Lobby.getConfigStrings("command.spawn.no-spawn-set"));
             return true;
         }
 
         player.teleport(spawnUtils.get().getLocation("spawn"));
-        player.sendMessage(Lobby.getConfigString("spawn-teleport"));
+        player.sendMessage(Lobby.getConfigStrings("command.spawn.teleport"));
 
         return true;
     }

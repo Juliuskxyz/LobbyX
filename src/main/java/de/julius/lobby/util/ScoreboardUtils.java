@@ -1,9 +1,12 @@
 package de.julius.lobby.util;
 
-import de.julius.lobby.Lobby;
+import de.julius.lobby.rank.rankListener;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import org.bukkit.plugin.Plugin;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
@@ -19,7 +22,7 @@ public class ScoreboardUtils {
 
         objective.getScore("    §8◆§m                                   §r§8◆  ").setScore(7);
         objective.getScore("      §lᴘʟᴀʏᴇʀ").setScore(6);
-        objective.getScore("       §8 ▪ §7ʀᴀɴᴋ: " + Lobby.getPlayerRank(player)).setScore(5);
+        objective.getScore("       §8 ▪ §7ʀᴀɴᴋ: " + rankListener.playerRank(player)).setScore(5);
         objective.getScore("       §8 ▪ §7ᴘɪɴɢ: " + "§f" + player.getPing()).setScore(4);
         objective.getScore("      §lꜱᴇʀᴠᴇʀ").setScore(3);
         objective.getScore("       §8 ▪ §7ᴏɴʟɪɴᴇ: " + "§f" + onlinePlayers).setScore(2);
@@ -38,5 +41,4 @@ public class ScoreboardUtils {
 
         return s;
     }
-
 }

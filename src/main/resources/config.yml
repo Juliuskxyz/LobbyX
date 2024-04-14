@@ -1,9 +1,40 @@
+# [/\----------Credits & Information----------/\]
+
 # Lobby Plugin Config
-# Autor: Julius aka IchBinLegal
+# Autor: Julius aka IchBinLegal and Michele aka MiSkynet
 # Plugin Version 1.0
 # MC Version: 1.20.4
 
-join-message: "&9&lWillkommen zurück, %player%!"
+# First of all, thank you for using my Plugin. In the config.yml, you can
+# edit every default options like the language that is used or how the chat
+# will be formatted.
+
+# If something goes wrong, simply delete the broken file and restart the plugin.
+# The file should be recreated and loaded with the standard settings.
+
+# On my GitHub is a full documentation about the Plugin and the Project
+# is Open Source, so you can see the Source Code.
+
+# [/\----------Links----------/\]
+
+# Project on GitHub: https://github.com/Juliusxyz/LobbyX
+# My GitHub: https://github.com/Juliusxyz
+# Michele's GitHub (Helped me): https://github.com/MiSkynet
+
+
+# [/\----------Easy Settings----------/\]
+
+# In the following setting you can set the language file that
+# is used for all messages. By default, it's set to english
+# Just write the name of the language file below
+used-language: "en-US"
+
+# Following Placeholders can be used in the ChatFormat:
+# %prefix% - Displays the players Prefix in the message
+# %player% - Displays the players name in the message
+# %colormessage% - Makes you be able to use chat color codes (with & + colorcode) and displays the players message
+# %message% - Displays the message WITHOUT be able to use color codes
+ChatFormat: "%prefix% %player% §8» §f%colormessage%"
 
 # Checks
 Disable-rain: true
@@ -13,19 +44,29 @@ Block-burn: true
 block-explode: true
 Item-Use: true
 
-# Messages
-build-on: "&9Du bist nun im Build Modus."
-build-off: "&9Du bist nun nicht mehr im Build Modus."
-no-permission: "&9Du hast keine Berechtigung, diesen Befehl auszuführen."
-send-by-console: "&9Dieser Befehl kann nur von einem Spieler ausgeführt werden."
-DROP_DENY_MESSAGE: "&9Du kannst dieses Item nicht droppen."
-flying-enabled: "§9Du kannst jetzt fliegen."
-flying-disabled: "§9Du kannst jetzt nicht mehr fliegen."
-spawn-set: "§9Du hast einen neuen Spawnpunkt gesetzt."
-spawn-teleport: "§9Du bist jetzt am Spawn."
-
-
 server-selector:
+  item:
+    item: CLOCK
+    item-name: "§cѕᴇʀᴠᴇʀ ѕᴇʟᴇᴄᴛᴏʀ"
+    item-lore: "§7» ѕᴇʟᴇᴄᴛ ᴛʜᴇ ѕᴇʀᴠᴇʀ ʏᴏᴜ ᴡɪѕʜ ᴛᴏ ᴘʟᴀʏ ᴏɴ"
   server-one:
-    item: CHERRY_SAPLING
-    ip: nebularsmp
+    active: true
+    item: PURPLE_CONCRETE_POWDER
+    item-name: "§9§lɪᴛᴇᴍ ᴏɴᴇ"
+    item-lore: "§7ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴛʜᴇ ʟᴏʀᴇ, ᴊᴜѕᴛ ʟᴇᴀᴠᴇ ᴛʜɪѕ ᴇᴍᴘᴛʏ"
+    ip: bungeeCordServerName
+    item-slot: 11
+  server-two:
+    active: true
+    item: MAGENTA_CONCRETE_POWDER
+    item-name: "§9§lɪᴛᴇᴍ ᴛᴡᴏ"
+    item-lore: "§7ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴛʜᴇ ʟᴏʀᴇ, ᴊᴜѕᴛ ʟᴇᴀᴠᴇ ᴛʜɪѕ ᴇᴍᴘᴛʏ"
+    ip: bungeeCordServerName
+    item-slot: 13
+  server-three:
+    active: true
+    item: PINK_CONCRETE_POWDER
+    item-name: "§9§lɪᴛᴇᴍ ᴛʜʀᴇᴇ"
+    item-lore: "§7ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴛʜᴇ ʟᴏʀᴇ, ᴊᴜѕᴛ ʟᴇᴀᴠᴇ ᴛʜɪѕ ᴇᴍᴘᴛʏ"
+    ip: bungeeCordServerName
+    item-slot: 15
